@@ -1,0 +1,134 @@
+.form {
+  padding-top: 20px;
+  padding-bottom: 48px;
+}
+
+.form__fieldset {
+  border: none;
+  border-top: 1px solid @fieldset-border;
+  border-bottom: 1px solid @fieldset-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px 20px 10px;
+}
+
+.form__legend {
+  font-weight: 700;
+  line-height: 26px;
+  font-size: 18px;
+  color: @ordinary-text;
+}
+
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form__text-input {
+  font-size: 14px;
+  padding: 20px 10px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid @fieldset-border;
+  border-radius: 5px 5px 0 0;
+  background-color: @input-background;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+.form__label {
+  color: @input-text;
+  font-size: 14px;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 35%;
+  transition: 0.2s ease all;
+}
+
+.form__text-input:hover {
+  background-color: @input-back-hover;
+}
+
+.form__text-input:focus,
+.form__text-input:active {
+  top: 0;
+  font-size: 14px;
+  background-color: @input-back-active;
+  outline: none;
+}
+
+.form__text-input:focus ~ .form__label,
+.form__text-input:active ~ .form__label,
+.form__text-input:valid ~ .form__label {
+  top: 2px;
+  font-size: 10px;
+  color: @input-border;
+}
+
+.form__input-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.form__input-bar::before,
+.form__input-bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: @input-border;
+  z-index: 5;
+}
+
+.form__input-bar::before {
+  left: 50%;
+}
+
+.form__input-bar::after {
+  right: 50%;
+}
+
+/* active state */
+
+.form__text-input:focus ~ .form__input-bar::before,
+.form__text-input:focus ~ .form__input-bar::after,
+.form__text-input:active ~ .form__input-bar::before,
+.form__text-input:active ~ .form__input-bar::after {
+  width: 50%;
+  transition: 0.2s ease all;
+}
+
+.form__button {
+  background-color: @input-back-hover;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @ordinary-text;
+  width: 200px;
+  height: 58px;
+  font-family: "Roboto", "Arial", sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__button:hover {
+  background-color: @input-back-active;
+  cursor: pointer;
+}
+
+.form__button:active {
+  background-color: @fieldset-border;
+  cursor: pointer;
+  color: rgba(32, 33, 36, 0.5);
+}
