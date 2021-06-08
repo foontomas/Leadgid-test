@@ -124,6 +124,19 @@
   transition: 0.2s ease all;
 }
 
+.form__text-input--error ~ .form__input-bar::after,
+.form__text-input--error ~ .form__input-bar::before {
+  background-color: @error-color;
+}
+
+.form__text-input--error ~ .form__label,
+.form__text-input--error:active ~ .form__label,
+.form__text-input--error:focus ~ .form__label {
+  top: 2px;
+  font-size: 10px;
+  color: @error-color;
+}
+
 .form__button:hover {
   background-color: @input-back-active;
   cursor: pointer;
