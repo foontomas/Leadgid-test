@@ -1,3 +1,5 @@
+//оформление внешнего вида неактивных элементов формы
+
 .form {
   padding-top: 20px;
   padding-bottom: 48px;
@@ -51,6 +53,30 @@
   transition: 0.2s ease all;
 }
 
+.form__input-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.form__button {
+  background-color: @input-back-hover;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @ordinary-text;
+  width: 200px;
+  height: 58px;
+  font-family: "Roboto", "Arial", sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//оформляем активное состояние элементов
+
 .form__text-input:hover {
   background-color: @input-back-hover;
 }
@@ -69,12 +95,6 @@
   top: 2px;
   font-size: 10px;
   color: @input-border;
-}
-
-.form__input-bar {
-  position: relative;
-  display: block;
-  width: 100%;
 }
 
 .form__input-bar::before,
@@ -96,30 +116,12 @@
   right: 50%;
 }
 
-/* active state */
-
 .form__text-input:focus ~ .form__input-bar::before,
 .form__text-input:focus ~ .form__input-bar::after,
 .form__text-input:active ~ .form__input-bar::before,
 .form__text-input:active ~ .form__input-bar::after {
   width: 50%;
   transition: 0.2s ease all;
-}
-
-.form__button {
-  background-color: @input-back-hover;
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: @ordinary-text;
-  width: 200px;
-  height: 58px;
-  font-family: "Roboto", "Arial", sans-serif;
-  border: none;
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .form__button:hover {
