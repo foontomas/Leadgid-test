@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/roboto.woff2") format("woff2"), url("../fonts/roboto.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/robotobold.woff2") format("woff2"), url("../fonts/robotobold.woff") format("woff");
+}
+.body {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: #202124;
+  background-color: #FFFFFF;
+  margin: 0;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.body__container {
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}
+@media (min-width: 768px) {
+  .body__container {
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .body__container {
+    width: 1200px;
+  }
+}
+.page-header__welcome-banner {
+  width: 100%;
+  height: 200px;
+  background-color: #fafafa;
+  background-image: url("../img/welcome-banner.webp");
+  background-size: cover;
+  background-position: center 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.form {
+  padding-top: 20px;
+  padding-bottom: 48px;
+}
+.form__fieldset {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px 20px 10px;
+}
+.form__legend {
+  font-weight: 700;
+  line-height: 26px;
+  font-size: 18px;
+  color: #202124;
+}
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form__text-input {
+  font-size: 14px;
+  padding: 20px 10px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 5px 5px 0 0;
+  background-color: #fafafa;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+.form__label {
+  color: #363636;
+  font-size: 14px;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 35%;
+  transition: 0.2s ease all;
+}
+.form__input-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.form__button {
+  background-color: #EEEEEE;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #202124;
+  width: 200px;
+  height: 58px;
+  font-family: "Roboto", "Arial", sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form__text-input:hover {
+  background-color: #EEEEEE;
+}
+.form__text-input:focus,
+.form__text-input:active {
+  top: 0;
+  font-size: 14px;
+  background-color: #f3f3f3;
+  outline: none;
+}
+.form__text-input:focus ~ .form__label,
+.form__text-input:active ~ .form__label,
+.form__text-input:valid ~ .form__label {
+  top: 2px;
+  font-size: 10px;
+  color: #127a3d9d;
+}
+.form__input-bar::before,
+.form__input-bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #127a3d9d;
+  z-index: 5;
+}
+.form__input-bar::before {
+  left: 50%;
+}
+.form__input-bar::after {
+  right: 50%;
+}
+.form__text-input:focus ~ .form__input-bar::before,
+.form__text-input:focus ~ .form__input-bar::after,
+.form__text-input:active ~ .form__input-bar::before,
+.form__text-input:active ~ .form__input-bar::after {
+  width: 50%;
+  transition: 0.2s ease all;
+}
+.form__text-input--error ~ .form__input-bar::after,
+.form__text-input--error ~ .form__input-bar::before {
+  background-color: #ff0000;
+}
+.form__text-input--error ~ .form__label,
+.form__text-input--error:active ~ .form__label,
+.form__text-input--error:focus ~ .form__label {
+  top: 2px;
+  font-size: 10px;
+  color: #ff0000;
+}
+.form__button:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.form__button:active {
+  background-color: #e5e5e5;
+  cursor: pointer;
+  color: rgba(32, 33, 36, 0.5);
+}
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copyright__text {
+  margin-top: 0;
+  margin-right: 13px;
+  margin-bottom: 10px;
+  height: 26px;
+}
+.copyright__link:hover .copyright__logo,
+.copyright__link:focus .copyright__logo {
+  fill: #127a3d9d;
+}
+.copyright__link:active .copyright__logo {
+  fill: rgba(0, 0, 0, 0.3);
+}
